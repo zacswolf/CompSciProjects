@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Random;
+public class Deck {
+	
+	private ArrayList<Card> Deck;
+	public Deck(ArrayList<Card> deck){
+		Deck = deck;
+	} 
+	
+		public void Shuffle(){
+			Random dice = new Random();
+			int rand;
+			for(int i = 0; i < Deck.size(); i++){
+				rand = dice.nextInt(Deck.size());
+				Deck.set(i, Deck.get(rand));
+				Deck.set(rand, Deck.get(i));
+			}
+			
+		}
+		
+		public int size(){
+			return Deck.size();
+		}
+			
+		public Card getCard(int index){
+			return Deck.get(index);
+		}
+		
+		public void delCard(int index){
+			Deck.remove(index);
+		}
+		
+		public ArrayList<ArrayList<Card>> deal(int players, int cardsperplayer){
+			ArrayList<ArrayList<Card>> Cards = new ArrayList<ArrayList<Card>>();
+			ArrayList<Card> Hand = new ArrayList<Card>();
+			for (int i = 1; i <= players; i++){
+				for (int j =0; j < cardsperplayer; j++){
+					Hand.add(Deck.get(0));
+					Deck.remove(0);	
+				}
+				Cards.add(Hand);
+				Hand = new ArrayList<Card>();
+			}
+			return Cards;
+		}
+	
+		public void Saying(){
+			for (int i = 0; i < Deck.size(); i++){
+				Deck.get(i).saying();
+			}
+		}
+	
+}

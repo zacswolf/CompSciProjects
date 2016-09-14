@@ -1,0 +1,10 @@
+
+public class PlayerTester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Player Player1 = new Player ()
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;PunctChar.java&apos; to &apos;IPunctChar.java&apos;&#x0A;- Original project: &apos;StoryGenerator&apos;&#x0A;- Original element: &apos;PunctChar.java&apos;&#x0A;- Renamed element: &apos;IPunctChar.java&apos;" description="Rename compilation unit &apos;PunctChar.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{PunctChar.java" name="IPunctChar.java" references="false" stamp="1447375485684" version="1.0"/>
+</session>

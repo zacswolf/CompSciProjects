@@ -1,0 +1,110 @@
+import java.util.ArrayList;
+public class DeckTester {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Card> deck = new ArrayList<Card>();
+		String Suit = null;
+		String Rank = null;
+		int Value = 0;
+		
+		for (int i = 0; i < 4; i++){
+			for (int j =2; j <= 14; j++){
+				switch(i){
+					case 0:
+						Suit = "Heart";
+					break;
+					case 1:
+						Suit = "Spade";
+					break;
+					case 2:
+						Suit = "Clover";
+					break;
+					case 3:
+						Suit = "Diamond";
+					break;
+				}
+				switch(j){
+					case 2:
+						Rank = "2";
+						Value = 2;
+						break;
+					case 3:
+						Rank = "3";
+						Value = 3;
+					break;
+					case 4:
+						Rank = "2";
+						Value = 4;
+					break;
+					case 5:
+						Rank = "5";
+						Value = 5;
+					break;
+					case 6:
+						Rank = "6";
+						Value = 6;
+					break;
+					case 7:
+						Rank = "7";
+						Value = 7;
+					break;
+					case 8:
+						Rank = "8";
+						Value = 8;
+					break;
+					case 9:
+						Rank = "9";
+						Value = 9;
+					break;
+					case 10:
+						Rank = "10";
+						Value = 10;
+					break;
+					case 11:
+						Rank = "Jack";
+						Value = 10;
+					break;
+					case 12:
+						Rank = "Queen";
+						Value = 10;
+					break;
+					case 13:
+						Rank = "King";
+						Value = 10;
+					break;
+					case 14:
+						Rank = "Ace";
+						Value = 11;
+					break;
+				
+			}
+				deck.add(new Card(Suit, Rank, Value));
+			}
+		}
+		
+		
+		
+		Deck Deck1 = new Deck(deck);
+		Deck1.Saying();
+		Deck1.Shuffle();
+		Deck1.Saying();
+		Deck1.size();
+		System.out.println();
+		ArrayList<ArrayList<Card>> Cards = Deck1.deal(7, 2);
+		ArrayList<Player> Players= new ArrayList<Player>();
+		for (int i = 0; i < Cards.size(); i++){
+			Players.add(new Player(Cards.get(i)));
+			Players.get(i).Saying();
+			System.out.println();
+		}
+		System.out.println(Players.size() + " asdasdasdasdasdsadasd");
+		for (int i = 0; i < Players.size(); i++){
+			System.out.println(Players.get(i).size() + " asdasdasdasdasdsadasd");
+			for (int j= 0;j<Players.get(i).size(); j++){ // something is wrong
+				Players.get(i).Play(Deck1, j).saying();
+			}
+		}
+		
+		
+	}
+}

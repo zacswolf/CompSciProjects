@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WarCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKD-13-PlG" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g23-gy-MHW" userLabel="FirstCard">
+                                <rect key="frame" x="0.0" y="215" width="120" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Zb8-0e-md8"/>
+                                    <constraint firstAttribute="height" constant="170" id="wNA-fC-btG"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="315" width="120" height="170"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a8-Rz-svG">
+                                <rect key="frame" x="285" y="0.0" width="31" height="30"/>
+                                <state key="normal" title="Deal"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="385" y="0.0" width="31" height="30"/>
+                                </variation>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxo-bW-5rb" userLabel="SecondCard">
+                                <rect key="frame" x="0.0" y="215" width="120" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Q1E-rb-aUJ"/>
+                                    <constraint firstAttribute="height" constant="170" id="zNe-en-bXU"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="315" width="120" height="170"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mxo-bW-5rb" secondAttribute="trailing" constant="50" id="Dlw-Cr-OMe"/>
+                            <constraint firstItem="g23-gy-MHW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FA5-3q-rDh"/>
+                            <constraint firstItem="0a8-Rz-svG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ILv-0C-UX4"/>
+                            <constraint firstItem="gKD-13-PlG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J6K-vk-48K"/>
+                            <constraint firstAttribute="bottom" secondItem="0a8-Rz-svG" secondAttribute="bottom" constant="50" id="JyH-ih-FeP"/>
+                            <constraint firstItem="gKD-13-PlG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PJu-B4-P2Y"/>
+                            <constraint firstAttribute="bottom" secondItem="gKD-13-PlG" secondAttribute="bottom" id="QvX-37-p5u"/>
+                            <constraint firstItem="mxo-bW-5rb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TzS-qT-aQf"/>
+                            <constraint firstAttribute="trailing" secondItem="mxo-bW-5rb" secondAttribute="trailing" constant="150" id="csx-no-akN"/>
+                            <constraint firstAttribute="trailing" secondItem="gKD-13-PlG" secondAttribute="trailing" id="jRM-Rz-ZFM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0a8-Rz-svG" secondAttribute="bottom" constant="150" id="kbK-C9-ZJd"/>
+                            <constraint firstItem="g23-gy-MHW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="pem-sx-95q"/>
+                            <constraint firstItem="g23-gy-MHW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="rCV-RX-8NQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pem-sx-95q"/>
+                                <exclude reference="rCV-RX-8NQ"/>
+                                <exclude reference="Dlw-Cr-OMe"/>
+                                <exclude reference="csx-no-akN"/>
+                                <exclude reference="JyH-ih-FeP"/>
+                                <exclude reference="kbK-C9-ZJd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="rCV-RX-8NQ"/>
+                                <include reference="csx-no-akN"/>
+                                <include reference="JyH-ih-FeP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="pem-sx-95q"/>
+                                <include reference="Dlw-Cr-OMe"/>
+                                <include reference="kbK-C9-ZJd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="gKD-13-PlG" id="LWJ-Pg-1iL"/>
+                        <outlet property="firstCardImageView" destination="g23-gy-MHW" id="QYM-oM-0Yn"/>
+                        <outlet property="playRoundButton" destination="0a8-Rz-svG" id="mS9-ft-k9Y"/>
+                        <outlet property="secondCardImageView" destination="mxo-bW-5rb" id="vGs-va-G8N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="399"/>
+        </scene>
+    </scenes>
+</document>

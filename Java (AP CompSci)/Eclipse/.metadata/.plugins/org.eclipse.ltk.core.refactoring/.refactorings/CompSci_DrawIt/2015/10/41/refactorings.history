@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;CompSci_Inheritance/src/(default package)&apos;&#x0A;- Original project: &apos;CompSci_DrawIt&apos;&#x0A;- Destination element: &apos;CompSci_Inheritance/src/(default package)&apos;&#x0A;- Original elements:&#x0A;     J3.java&#x0A;     Main3.java&#x0A;     K3.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="=CompSci_Inheritance/src&lt;" element1="/src&lt;{J3.java" element2="/src&lt;{Main3.java" element3="/src&lt;{K3.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1444321842133" units="3" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <ctime>
+#include <cstdio>
+
+  using namespace std;
+
+  int main(int argc, char** argv) {
+
+      clock_t start;
+      double diff;
+      start = clock();
+      diff = ( std::clock() - start ) / (double)CLOCKS_PER_SEC;
+      cout << "printf: " << diff << '\n';
+
+      return 0;
+  }
