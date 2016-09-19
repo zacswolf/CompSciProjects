@@ -16,8 +16,8 @@ int main()
 	cin>>string2;
 	
 	int index = string1.find(string2, 0);
-	cout <<"string 2 is at string1 starting at: " << index;
-	
+	cout <<"string 2 is at string1 starting at: " << index << endl;
+    cout << string1;
 	
 	
 	
