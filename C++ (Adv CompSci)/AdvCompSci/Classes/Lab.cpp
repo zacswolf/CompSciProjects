@@ -1,3 +1,5 @@
+//uses csv reader code
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,14 +8,56 @@
 using namespace std;
 
 
+
+class Data {
+		string OrderDate;
+		string Region;
+		string Rep;
+		string Item;
+		int Units;
+		double UnitCost;
+	public:
+	Data(){//default constructor
+		OrderDate="";
+		Region="";
+		Rep="";
+		Item="";
+		Units=0;
+		UnitCost=0.0;
+	}
+	Data(string OD, string Reg, string Re, string It, int Un, double UC){//default constructor
+		OrderDate=OD;
+		Region=Reg;
+		Rep=Re;
+		Item=It;
+		Units=Un;
+		UnitCost=UC;
+	}
+		void set_value(string, string, string, string, int, double);
+}Unit1,Unit2, Unit3, Unit4;
+
+void Data::set_value(string OD, string Reg, string Re, string It, int Un, double UC){
+	OrderDate=OD;
+	Region=Reg;
+	Rep=Re;
+	Item=It;
+	Units=Un;
+	UnitCost=UC;
+}
+
+
+
+
+
+
+
+
+
 void csvToString(string &str, ifstream &myfile){
 	while (!myfile.eof()){
 		str+=myfile.get();
 	}
 }
-
-
-
 void stringTo2DVector(vector< vector<string> > &vect, string &str){
 	int end=0;//last char index that was processed
 	int newLine;
@@ -24,8 +68,6 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 	vector<int> newLinePos;
 	vector<int> commaPos;
 	vector<string> row;
-
-
 	end=0;
 	while(end!=-1){//marks quotes
 		end = str.find('\"',end);
@@ -39,12 +81,6 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 			end = -1;
 		}
 	}
-
-
-
-
-	cout << "quotes   " << quotePos.size() << endl;
-
 	end=0;
 	while(str.find("\n", end)!=-1){//marks new lines
 		skipNL=false;
@@ -59,9 +95,6 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 		}
 		end= newLine+1;
 	}
-	cout <<"newline   " << newLinePos.size() << endl;
-
-
 	end=0;
 	while(str.find(',', end)!=-1){//marks commas
 		skipC=false;
@@ -77,16 +110,11 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 		}
 		end= newCol+1;
 	}
-	cout <<"commas   " << commaPos.size() << endl;
-
-
 	end=0;
 	int numCol=1;
 	for(int k=0; commaPos[k] < newLinePos[0];k++){
 		numCol++;
 	}
-	cout << "Cols    " << numCol << endl;
-	
 	//facts there are numCol Collumns and newLinePos.size() rows
 	int start=0;
 	int co=0;
@@ -101,16 +129,13 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 		vect.push_back(row);
 		row.clear();
 	}	
-
-	
 }
 
 
 
 
 int main(){
-	
-	string openFileName = "WPP2015_MORT_F07_1_LIFE_EXPECTANCY_0_BOTH_SEXES.csv";//change name here for file changing
+	string openFileName = "SalesDataP2.csv";//change name here for file changing
 	ifstream myfile (openFileName.c_str());
 	remove("csvoutput.csv");
 	ofstream output ("csvoutput.csv");
@@ -119,14 +144,24 @@ int main(){
 	csvToString(fileString, myfile);
 	stringTo2DVector(fileVect, fileString);
 
-
+	for (int i=0; i <5; i++){
+		
+	}
+	
+	Unit1.set_value(fileVect[1][0], fileVect[1][1], fileVect[1][2], fileVect[1][3], fileVect[1][4]);
+	Unit2.set_value(fileVect[2][0], fileVect[2][1], fileVect[2][2], fileVect[2][3], fileVect[2][4]);
+	Unit3.set_value(fileVect[3][0], fileVect[3][1], fileVect[3][2], fileVect[3][3], fileVect[3][4]);
+	Unit4.set_value(fileVect[4][0], fileVect[4][1], fileVect[4][2], fileVect[4][3], fileVect[4][4]);
+	
+	
+	
+	//manipulate
 	for (int u=0; u< fileVect.size();u++){
 		for (int y=0; y< fileVect[u].size();y++){
 			output << fileVect[u][y]<<",";
 		}
 		output << endl;
 	}
-
 
 	myfile.close();
 	output.close();
