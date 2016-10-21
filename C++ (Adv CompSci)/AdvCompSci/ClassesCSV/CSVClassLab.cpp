@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -14,37 +15,48 @@ class Data {
 		string Region;
 		string Rep;
 		string Item;
-		int Units;
-		double UnitCost;
+		string Units;
+		string UnitCost;
+		double total;
 	public:
 	Data(){//default constructor
 		OrderDate="";
 		Region="";
 		Rep="";
 		Item="";
-		Units=0;
-		UnitCost=0.0;
+		Units="0";
+		UnitCost="0.0";
+		total= atof(Units.c_str()) * atof(UnitCost.c_str());
 	}
-	Data(string OD, string Reg, string Re, string It, int Un, double UC){//default constructor
+	Data(string OD, string Reg, string Re, string It, string Un, string UC){//default constructor
 		OrderDate=OD;
 		Region=Reg;
 		Rep=Re;
 		Item=It;
 		Units=Un;
 		UnitCost=UC;
+		total= atof(Units.c_str()) * atof(UnitCost.c_str());
 	}
-		void set_value(string, string, string, string, int, double);
-}Unit1,Unit2, Unit3, Unit4;
+		void set_value(string, string, string, string, string, string);
+		string ret();
+		double Total();
+};
 
-void Data::set_value(string OD, string Reg, string Re, string It, int Un, double UC){
+void Data::set_value(string OD, string Reg, string Re, string It, string Un, string UC){
 	OrderDate=OD;
 	Region=Reg;
 	Rep=Re;
 	Item=It;
 	Units=Un;
 	UnitCost=UC;
+	total= atof(Units.c_str()) * atof(UnitCost.c_str());
 }
-
+double Data::Total(){
+	return total;
+}
+string Data::ret(){
+	return OrderDate+","+Region+","+Rep+","+Item+","+Units+","+UnitCost+"\n";
+}
 
 
 
@@ -129,6 +141,10 @@ void stringTo2DVector(vector< vector<string> > &vect, string &str){
 		vect.push_back(row);
 		row.clear();
 	}	
+	
+	
+	
+
 }
 
 
@@ -144,23 +160,50 @@ int main(){
 	csvToString(fileString, myfile);
 	stringTo2DVector(fileVect, fileString);
 
-	for (int i=0; i <5; i++){
-		
+	Data sales[fileVect.size()-1];
+	string buffer[fileVect[0].size()];
+	//cout << "A\n";
+	for (int q=1;q < fileVect.size(); q++){
+		for (int l=0; l < fileVect[q].size(); l++){
+			buffer[l]=fileVect[q][l];
+			//cout << "fileVect: " << fileVect[q][l] << endl;
+		}
+		sales[q-1].set_value(buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
+		//cout << sales[q-1].Total() << endl;
 	}
-	
-	Unit1.set_value(fileVect[1][0], fileVect[1][1], fileVect[1][2], fileVect[1][3], fileVect[1][4]);
-	Unit2.set_value(fileVect[2][0], fileVect[2][1], fileVect[2][2], fileVect[2][3], fileVect[2][4]);
-	Unit3.set_value(fileVect[3][0], fileVect[3][1], fileVect[3][2], fileVect[3][3], fileVect[3][4]);
-	Unit4.set_value(fileVect[4][0], fileVect[4][1], fileVect[4][2], fileVect[4][3], fileVect[4][4]);
-	
-	
+	//cout << "B\n";
 	
 	//manipulate
-	for (int u=0; u< fileVect.size();u++){
-		for (int y=0; y< fileVect[u].size();y++){
-			output << fileVect[u][y]<<",";
+	Data temp;
+	int first;
+	
+	for (int i = fileVect.size()-2;i>0; i--){
+		first =0;
+		for (int j = 1; j <=i; ++j){
+			if (sales[j].Total() < sales[first].Total()){
+				first = j;
+			}
+			//cout << "switched\n";
+			temp = sales[first];
+			//cout << "dasdhasjkdhasjkdh "<< sales[i].ret();
+			sales[first] = sales[i];
+			sales[i] = temp;
+			//cout << "dasdhasjkdhasjkdh "<< sales[i].ret();
 		}
-		output << endl;
+	}
+	
+	for (int u=0; u< fileVect.size()-1;u++){
+		//cout << sales[u].Total() << endl;
+	}
+	///////////////////NEED TO SET UP OUTPUT!!!!!!!!!!!!!!!!////////
+	
+	for (int y=0; y< fileVect[0].size();y++){
+		output << fileVect[0][y]<<",";
+	}
+	output << endl;
+	
+	for (int u=0; u< fileVect.size()-1;u++){
+		output<<sales[u].ret();
 	}
 
 	myfile.close();
