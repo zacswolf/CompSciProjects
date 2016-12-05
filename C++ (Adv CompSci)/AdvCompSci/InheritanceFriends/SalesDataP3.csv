@@ -1,0 +1,31 @@
+OrderDate, Region, Rep, Item, Units, UnitCost
+1/6/2015, East, Jones, Pencil,95,1.99
+1/23/2015, Central, Kivell, Binder,100,21.99
+2/9/2015, Central, Jardine, Pencil,36,4.99
+2/26/2015, Central, Gill, Pen,2,19.99
+3/15/2015, West, Sorvino, Pencil,56,2.99
+4/1/2015, East, Jones, Binder,60,4.99
+4/18/2015, Central, Andrews, Pencil,75,1.99
+5/5/2015, Central, Jardine, Pencil,90,4.99
+5/22/2015, West, Thompson, Pencil,32,1.99
+6/8/2015, East, Jones, Binder,60,8.99
+6/25/2015, Central, Morgan, Pencil,90,4.99
+7/12/2015, East, Howard, Binder,29,1.99
+7/29/2015, East, Parent, Binder,81,19.99
+8/15/2015, East, Jones, Pencil,35,4.99
+9/1/2015, Central, Smith, Desk,2,125
+9/18/2015, East, Jones, Pen Set,16,15.99
+10/5/2015, Central, Morgan, Binder,28,8.99
+10/22/2015, East, Jones, Pen,64,8.99
+11/8/2015, East, Parent, Pen,15,19.99
+11/25/2015, Central, Kivell, Pen Set,96,4.99
+12/12/2015, Central, Smith, Pencil,67,1.29
+12/29/2015, East, Parent, Pen Set,74,15.99
+1/15/2016, Central, Gill, Binder,16,8.99
+2/1/2016, Central, Smith, Binder,87,15
+2/18/2016, East, Jones, Binder,4,4.99
+3/7/2016, West, Sorvino, Binder,7,19.99
+3/24/2016, Central, Jardine, Pen Set,11,4.99
+4/10/2016, Central, Andrews, Pencil,66,1.99
+4/27/2016, East, Howard, Pen,96,4.99
+5/14/2016, Central, Gill, Pencil,53,1.29
