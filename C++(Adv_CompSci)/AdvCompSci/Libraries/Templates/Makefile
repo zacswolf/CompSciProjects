@@ -1,9 +1,9 @@
 CC=g++
 CFLAGS=-c -std=gnu++11 -Wall -pedantic
 LDFLAGS=
-SOURCES=Main.cpp Add.cpp
+SOURCES=Main.cpp #Add.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=Add
+EXECUTABLE=Math
 
 all: $(SOURCES) $(EXECUTABLE)
 #compile everything
